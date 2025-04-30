@@ -5,3 +5,4 @@ output/
 index_documents/
 .vscode
 .vercel
+.venv
