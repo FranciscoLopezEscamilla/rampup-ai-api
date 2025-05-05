@@ -23,13 +23,13 @@ const PromptSuggestionList = ({ handleOnSubmitForm }: IProps) => {
       <div
         className={cardStyle}
         onClick={() => {
-          const text = "Give me a summary of the onboarding file";
+          const text = "Give me a summary of the onboarding file from NebulaCore";
           const formData = new FormData();
           formData.append("query", text);
           handleOnSubmitForm(formData);
         }}
       >
-        <p>Give me a summary of the onboarding file</p>
+        <p>Give me a summary of the onboarding file from NebulaCore</p>
       </div>
       <div
         className={cardStyle}
