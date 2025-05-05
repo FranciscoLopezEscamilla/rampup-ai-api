@@ -23,7 +23,7 @@ const PromptSuggestionList = ({ handleOnSubmitForm }: IProps) => {
       <div
         className={cardStyle}
         onClick={() => {
-          const text = "What is the purpose of the Sales_Data_Q2.xlsx file?";
+          const text = "Give me a summary of the onboarding file";
           const formData = new FormData();
           formData.append("query", text);
           handleOnSubmitForm(formData);
