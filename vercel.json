@@ -1,15 +1,22 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    },
     {
       "src": "api/main.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/main.py"
-    }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    // 1. First, serve any API calls via your Python function
+    { "src": "/api/(.*)", "dest": "api/main.py" },
+    // 2. Then, handle static assets (images, CSS, JS, etc.)
+    { "handle": "filesystem" },
+    // 3. Finally, for all other routes, serve index.html so your SPA can route
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
