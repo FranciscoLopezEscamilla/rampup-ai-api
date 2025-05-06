@@ -12,11 +12,8 @@
     }
   ],
   "routes": [
-    // 1. First, serve any API calls via your Python function
     { "src": "/api/(.*)", "dest": "api/main.py" },
-    // 2. Then, handle static assets (images, CSS, JS, etc.)
     { "handle": "filesystem" },
-    // 3. Finally, for all other routes, serve index.html so your SPA can route
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
